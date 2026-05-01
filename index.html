@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anatomía Canina</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div id="app">
+
+    <!-- PANTALLA: Inicio -->
+    <div id="pantalla-inicio" class="pantalla activa">
+      <div class="logo-wrap">
+        <div class="logo-icon">🐾</div>
+        <div>
+          <h1>Anatomía Canina</h1>
+          <p class="subtitulo">Músculos · Inervación · Función</p>
+        </div>
+      </div>
+
+      <div id="resumen-inicio" class="card"></div>
+
+      <div class="menu-grid">
+        <button class="btn-primary" onclick="iniciarSesion()">
+          <span class="btn-icon">🎯</span>
+          <span class="btn-text">
+            <strong>Sesión de estudio</strong>
+            <small>Todos los pendientes de hoy</small>
+          </span>
+        </button>
+
+        <button class="btn-secondary" onclick="iniciarQuizAleatorio(5)">
+          <span class="btn-icon">🎲</span>
+          <span class="btn-text">
+            <strong>5 preguntas rápidas</strong>
+            <small>Repaso aleatorio</small>
+          </span>
+        </button>
+
+        <button class="btn-ghost" onclick="mostrarPantalla('pantalla-pendientes')">
+          📋 Ver progreso
+        </button>
+
+        <button class="btn-ghost btn-danger" onclick="reiniciarProgreso()">
+          🔄 Reiniciar todo
+        </button>
+      </div>
+    </div>
+
+    <!-- PANTALLA: Pregunta -->
+    <div id="pantalla-pregunta" class="pantalla">
+      <div class="top-bar">
+        <button class="btn-back" onclick="salirSesion()">← Salir</button>
+        <div id="temporizador" class="timer">⏱ 00:00</div>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span id="numero-pregunta"></span>
+          <span id="progreso"></span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="card ayudas-card">
+        <p class="ayuda-titulo">¿Qué músculo es este?</p>
+        <div class="ayuda-row"><span class="ayuda-badge">📍</span> <span><strong>Región:</strong> <span id="region-ayuda"></span></span></div>
+        <div class="ayuda-row"><span class="ayuda-badge">📌</span> <span><strong>Ubicación:</strong> <span id="ubicacion-ayuda"></span></span></div>
+        <div class="ayuda-row"><span class="ayuda-badge">🔍</span> <span><strong>Descripción:</strong> <span id="descripcion-ayuda"></span></span></div>
+      </div>
+
+      <div id="panel-pista" class="pista-card" style="display:none">
+        <p class="pista-titulo">💡 Pista nivel <span id="nivel-pista"></span></p>
+        <p id="texto-pista"></p>
+      </div>
+
+      <button id="btn-pista" class="btn-pista" onclick="mostrarPista()">🔎 Pedir pista</button>
+
+      <div class="campos-wrap">
+        <div class="campo">
+          <label for="input-nombre">Nombre del músculo</label>
+          <input type="text" id="input-nombre" placeholder="Ej: Biceps brachii" autocomplete="off"/>
+        </div>
+        <div class="campo">
+          <label for="input-inervacion">Inervación</label>
+          <input type="text" id="input-inervacion" placeholder="Ej: Nervio musculocutáneo" autocomplete="off"/>
+        </div>
+        <div class="campo">
+          <label for="input-funcion">Función</label>
+          <input type="text" id="input-funcion" placeholder="Ej: Flexor del codo" autocomplete="off"/>
+        </div>
+      </div>
+
+      <div class="action-bar">
+        <button class="btn-check" onclick="verificarRespuesta()">Comprobar ✓</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA: Resultado -->
+    <div id="pantalla-resultado" class="pantalla">
+      <div class="top-bar">
+        <button class="btn-back" onclick="salirSesion()">← Salir</button>
+      </div>
+      <h2 class="resultado-titulo">Resultado</h2>
+      <div id="detalle-resultado" class="card"></div>
+      <div class="action-bar doble">
+        <button class="btn-check" onclick="siguientePregunta()">Siguiente →</button>
+        <button class="btn-ghost" onclick="repetirPregunta()">🔄 Repetir</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA: Fin de sesión -->
+    <div id="pantalla-fin" class="pantalla">
+      <div class="fin-hero">🏁</div>
+      <h2>Sesión terminada</h2>
+      <div id="resumen-fin" class="card"></div>
+      <button class="btn-primary full" onclick="mostrarPantalla('pantalla-inicio')">
+        🏠 Volver al inicio
+      </button>
+    </div>
+
+    <!-- PANTALLA: Pendientes -->
+    <div id="pantalla-pendientes" class="pantalla">
+      <div class="top-bar">
+        <button class="btn-back" onclick="mostrarPantalla('pantalla-inicio')">← Volver</button>
+      </div>
+      <h2>Progreso</h2>
+      <div id="lista-pendientes" class="card lista-card"></div>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
