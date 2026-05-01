@@ -75,3 +75,7 @@ Cada músculo incluye:
 ---
 
 ## 📁 Estructura del proyecto
+anatomia-canina/
+├── index.html    → estructura de la app
+├── style.css     → diseño y estilos
+└── script.js     → lógica, datos y repetición espaciada
