@@ -2,102 +2,110 @@
 // BASE DE DATOS DE MÚSCULOS
 // ============================================================
 const musculos = [
-    { "nombre": "Bíceps braquial", "region": "Miembro torácico", "ubicacion": "Cara craneal del brazo", "descripcion": "Músculo fusiforme que se origina en la escápula y se inserta en el radio", "inervacion": "Nervio musculocutáneo", "funcion": "Flexor de la articulación del codo" },
-    { "nombre": "Tríceps braquial", "region": "Miembro torácico", "ubicacion": "Cara caudal del brazo", "descripcion": "Músculo con tres cabezas (larga, lateral y medial) que convergen en el olécranon", "inervacion": "Nervio radial", "funcion": "Extensor del codo" },
-    { "nombre": "Deltoides", "region": "Miembro torácico", "ubicacion": "Cara lateral del hombro", "descripcion": "Músculo triangular desde la escápula hasta el húmero", "inervacion": "Nervio axilar", "funcion": "Abductor y flexor del hombro" },
-    { "nombre": "Supraespinoso", "region": "Miembro torácico", "ubicacion": "Fosa supraespinosa de la escápula", "descripcion": "Músculo que recorre la fosa supraespinosa hasta el tubérculo mayor del húmero", "inervacion": "Nervio supraescapular", "funcion": "Extensor del hombro" },
-    { "nombre": "Infraespinoso", "region": "Miembro torácico", "ubicacion": "Fosa infraespinosa de la escápula", "descripcion": "Músculo grueso que se inserta en el tubérculo mayor del húmero", "inervacion": "Nervio supraescapular", "funcion": "Abductor y rotador externo del hombro" },
-    { "nombre": "Redondo mayor", "region": "Miembro torácico", "ubicacion": "Caudal a la escápula, desde su ángulo caudal hasta la cresta del húmero", "descripcion": "Músculo alargado y redondeado", "inervacion": "Nervio axilar", "funcion": "Aductor y flexor del hombro" },
-    { "nombre": "Subescapular", "region": "Miembro torácico", "ubicacion": "Cara medial de la escápula (fosa subescapular)", "descripcion": "Músculo ancho y plano, de forma triangular", "inervacion": "Nervio subescapular", "funcion": "Aductor y rotador interno del hombro" },
-    { "nombre": "Coracobraquial", "region": "Miembro torácico", "ubicacion": "Cara medial del brazo, desde la apófisis coracoides hasta el húmero", "descripcion": "Músculo pequeño y alargado", "inervacion": "Nervio musculocutáneo", "funcion": "Aductor del hombro" },
-    { "nombre": "Braquial", "region": "Miembro torácico", "ubicacion": "Cara caudal del húmero, desde su cuello hasta la tuberosidad del radio", "descripcion": "Músculo ancho que cubre la cara caudal del húmero", "inervacion": "Nervio musculocutáneo y radial", "funcion": "Flexor del codo" },
-    { "nombre": "Ancóneo", "region": "Miembro torácico", "ubicacion": "Cara lateral del codo, desde el epicóndilo lateral hasta el olécranon", "descripcion": "Músculo pequeño y triangular", "inervacion": "Nervio radial", "funcion": "Extensor del codo" },
-    { "nombre": "Extensor carpo radial", "region": "Miembro torácico", "ubicacion": "Cara craneolateral del antebrazo", "descripcion": "Músculo fusiforme que se origina en el epicóndilo lateral del húmero", "inervacion": "Nervio radial", "funcion": "Extensor del carpo y flexor del codo" },
-    { "nombre": "Extensor común de los dedos", "region": "Miembro torácico", "ubicacion": "Cara lateral del antebrazo", "descripcion": "Músculo largo que se divide en varios tendones hacia los dedos", "inervacion": "Nervio radial", "funcion": "Extensor del carpo y de los dedos" },
-    { "nombre": "Extensor lateral de los dedos", "region": "Miembro torácico", "ubicacion": "Cara lateral del antebrazo, caudal al extensor común", "descripcion": "Músculo más pequeño que el extensor común", "inervacion": "Nervio radial", "funcion": "Extensor de los dedos (principalmente el quinto)" },
-    { "nombre": "Flexor carpo radial", "region": "Miembro torácico", "ubicacion": "Cara medial del antebrazo", "descripcion": "Músculo fusiforme desde el epicóndilo medial hasta el metacarpo", "inervacion": "Nervio mediano", "funcion": "Flexor del carpo" },
-    { "nombre": "Flexor carpo cubital", "region": "Miembro torácico", "ubicacion": "Cara caudal del antebrazo", "descripcion": "Músculo con cabeza cubital y humeral", "inervacion": "Nervio cubital", "funcion": "Flexor del carpo" },
-    { "nombre": "Flexor superficial de los dedos (torácico)", "region": "Miembro torácico", "ubicacion": "Cara caudal del antebrazo, profundo", "descripcion": "Músculo con dos cabezas, sus tendones perforan los del flexor profundo", "inervacion": "Nervio mediano y cubital", "funcion": "Flexor de los dedos (segunda falange)" },
-    { "nombre": "Flexor profundo de los dedos (torácico)", "region": "Miembro torácico", "ubicacion": "Cara caudal del antebrazo, el más profundo", "descripcion": "Músculo potente con tres cabezas (humeral, cubital y radial)", "inervacion": "Nervio mediano y cubital", "funcion": "Flexor de los dedos (tercera falange)" },
-    { "nombre": "Pronador redondo", "region": "Miembro torácico", "ubicacion": "Cara medial del antebrazo, superficial", "descripcion": "Músculo corto desde el epicóndilo medial hasta el radio", "inervacion": "Nervio mediano", "funcion": "Pronador del antebrazo" },
-    { "nombre": "Supinador", "region": "Miembro torácico", "ubicacion": "Cara lateral del antebrazo, profundo", "descripcion": "Músculo pequeño desde el epicóndilo lateral hasta el radio", "inervacion": "Nervio radial", "funcion": "Supinador del antebrazo" },
-    { "nombre": "Abductor largo del pulgar", "region": "Miembro torácico", "ubicacion": "Cara dorsolateral del antebrazo distal", "descripcion": "Músculo alargado que se origina en el radio y cúbito", "inervacion": "Nervio radial", "funcion": "Abductor del pulgar y flexor del carpo" },
-    { "nombre": "Glúteo medio", "region": "Miembro pélvico", "ubicacion": "Cara lateral de la cadera", "descripcion": "Músculo grande desde el ilion hasta el trocánter mayor del fémur", "inervacion": "Nervio glúteo craneal", "funcion": "Abductor y extensor de la cadera" },
-    { "nombre": "Glúteo superficial", "region": "Miembro pélvico", "ubicacion": "Caudal al glúteo medio, más superficial", "descripcion": "Músculo más pequeño, desde la apófisis sacra hasta el tercer trocánter", "inervacion": "Nervio glúteo caudal", "funcion": "Abductor y extensor de la cadera" },
-    { "nombre": "Glúteo profundo", "region": "Miembro pélvico", "ubicacion": "Profundo al glúteo medio", "descripcion": "Músculo pequeño desde el ilion hasta el trocánter mayor", "inervacion": "Nervio glúteo craneal", "funcion": "Abductor y rotador interno de la cadera" },
-    { "nombre": "Bíceps femoral", "region": "Miembro pélvico", "ubicacion": "Cara lateral del muslo", "descripcion": "Músculo largo y ancho, con dos cabezas (vertebral y pélvica)", "inervacion": "Nervio ciático", "funcion": "Extensor de la cadera y flexor de la rodilla" },
-    { "nombre": "Semitendinoso", "region": "Miembro pélvico", "ubicacion": "Cara caudal del muslo, medial al bíceps femoral", "descripcion": "Músculo alargado que termina en un tendón largo", "inervacion": "Nervio ciático", "funcion": "Extensor de la cadera, flexor de la rodilla" },
-    { "nombre": "Semimembranoso", "region": "Miembro pélvico", "ubicacion": "Cara caudal del muslo, medial al semitendinoso", "descripcion": "Músculo ancho y plano, más grueso que el semitendinoso", "inervacion": "Nervio ciático", "funcion": "Extensor de la cadera y aductor del muslo" },
-    { "nombre": "Cuádriceps femoral", "region": "Miembro pélvico", "ubicacion": "Cara craneal del muslo", "descripcion": "Músculo potente con cuatro cabezas: recto femoral, vasto lateral, vasto medial y vasto intermedio", "inervacion": "Nervio femoral", "funcion": "Extensor de la rodilla" },
-    { "nombre": "Recto femoral", "region": "Miembro pélvico", "ubicacion": "Cara craneal del muslo, superficial", "descripcion": "Cabeza del cuádriceps que se origina en el ilion", "inervacion": "Nervio femoral", "funcion": "Extensor de la rodilla y flexor de la cadera" },
-    { "nombre": "Vasto lateral", "region": "Miembro pélvico", "ubicacion": "Cara lateral del muslo", "descripcion": "Cabeza del cuádriceps desde el fémur", "inervacion": "Nervio femoral", "funcion": "Extensor de la rodilla" },
-    { "nombre": "Vasto medial", "region": "Miembro pélvico", "ubicacion": "Cara medial del muslo", "descripcion": "Cabeza del cuádriceps desde el fémur", "inervacion": "Nervio femoral", "funcion": "Extensor de la rodilla" },
-    { "nombre": "Sartorio", "region": "Miembro pélvico", "ubicacion": "Cara medial del muslo, superficial", "descripcion": "Músculo largo y delgado, desde el ilion hasta la tibia", "inervacion": "Nervio femoral", "funcion": "Aductor del muslo y flexor de la rodilla" },
-    { "nombre": "Gracilis", "region": "Miembro pélvico", "ubicacion": "Cara medial del muslo, caudal al sartorio", "descripcion": "Músculo plano y ancho", "inervacion": "Nervio obturador", "funcion": "Aductor del muslo y extensor de la rodilla" },
-    { "nombre": "Pectíneo", "region": "Miembro pélvico", "ubicacion": "Cara medial del muslo, cerca de la ingle", "descripcion": "Músculo pequeño desde el pubis hasta el fémur", "inervacion": "Nervio obturador y femoral", "funcion": "Aductor del muslo" },
-    { "nombre": "Aductor mayor", "region": "Miembro pélvico", "ubicacion": "Cara medial del muslo, profundo al gracilis", "descripcion": "Músculo grande desde la pelvis hasta el fémur", "inervacion": "Nervio obturador", "funcion": "Aductor del muslo" },
-    { "nombre": "Tensor de la fascia lata", "region": "Miembro pélvico", "ubicacion": "Cara craneolateral del muslo, superficial", "descripcion": "Músculo aplanado que se continúa con la fascia lata", "inervacion": "Nervio glúteo craneal", "funcion": "Tensor de la fascia lata, flexor de la cadera y extensor de la rodilla" },
-    { "nombre": "Tibial craneal", "region": "Miembro pélvico", "ubicacion": "Cara craneolateral de la pierna", "descripcion": "Músculo fusiforme desde la tibia hasta el metatarso", "inervacion": "Nervio peroneo profundo", "funcion": "Flexor del tarso y extensor de los dedos" },
-    { "nombre": "Extensor largo de los dedos", "region": "Miembro pélvico", "ubicacion": "Cara craneal de la pierna, lateral al tibial craneal", "descripcion": "Músculo largo que se divide en tendones hacia los dedos", "inervacion": "Nervio peroneo profundo", "funcion": "Extensor de los dedos y flexor del tarso" },
-    { "nombre": "Peroneo largo", "region": "Miembro pélvico", "ubicacion": "Cara lateral de la pierna", "descripcion": "Músculo que rodea el maléolo lateral", "inervacion": "Nervio peroneo superficial", "funcion": "Flexor del tarso y pronador del pie" },
-    { "nombre": "Gastrocnemio", "region": "Miembro pélvico", "ubicacion": "Cara caudal de la pierna, forma la pantorrilla", "descripcion": "Músculo grande con dos cabezas que se unen en el tendón de Aquiles", "inervacion": "Nervio tibial", "funcion": "Extensor del tarso y flexor de la rodilla" },
-    { "nombre": "Sóleo", "region": "Miembro pélvico", "ubicacion": "Profundo al gastrocnemio", "descripcion": "Músculo plano que también contribuye al tendón calcáneo", "inervacion": "Nervio tibial", "funcion": "Extensor del tarso" },
-    { "nombre": "Flexor superficial de los dedos (pélvico)", "region": "Miembro pélvico", "ubicacion": "Cara caudal de la pierna, entre el gastrocnemio y el flexor profundo", "descripcion": "Músculo que da origen al tendón plantar", "inervacion": "Nervio tibial", "funcion": "Flexor de los dedos (segunda falange)" },
-    { "nombre": "Flexor profundo de los dedos (pélvico)", "region": "Miembro pélvico", "ubicacion": "Cara caudal de la pierna, el más profundo", "descripcion": "Compuesto por el flexor largo lateral, flexor largo medial y el tibial caudal", "inervacion": "Nervio tibial", "funcion": "Flexor de los dedos (tercera falange)" },
-    { "nombre": "Poplíteo", "region": "Miembro pélvico", "ubicacion": "Cara caudal de la rodilla, profundo", "descripcion": "Músculo pequeño y triangular", "inervacion": "Nervio tibial", "funcion": "Flexor y rotador medial de la rodilla" },
-    { "nombre": "Piriforme", "region": "Miembro pélvico", "ubicacion": "Cara caudal de la cadera, profundo al glúteo medio", "descripcion": "Músculo pequeño desde el sacro hasta el trocánter mayor", "inervacion": "Nervio ciático", "funcion": "Rotador externo y abductor de la cadera" },
-    { "nombre": "Temporal", "region": "Cabeza", "ubicacion": "Fosa temporal del cráneo", "descripcion": "Músculo potente, en forma de abanico", "inervacion": "Nervio mandibular (rama del trigémino)", "funcion": "Elevador de la mandíbula (cierre de la boca)" },
-    { "nombre": "Masetero", "region": "Cabeza", "ubicacion": "Cara lateral de la rama mandibular", "descripcion": "Músculo grueso con dos porciones (superficial y profunda)", "inervacion": "Nervio mandibular", "funcion": "Elevador de la mandíbula" },
-    { "nombre": "Pterigoideo medial", "region": "Cabeza", "ubicacion": "Cara medial de la rama mandibular", "descripcion": "Músculo cuadrangular", "inervacion": "Nervio mandibular", "funcion": "Elevador y protrusor de la mandíbula" },
-    { "nombre": "Pterigoideo lateral", "region": "Cabeza", "ubicacion": "Fosa pterigopalatina, medial al arco cigomático", "descripcion": "Músculo pequeño", "inervacion": "Nervio mandibular", "funcion": "Protrusor y lateralesor de la mandíbula" },
-    { "nombre": "Digástrico", "region": "Cabeza", "ubicacion": "Desde la apófisis paracondilar hasta el hueso hioides y mandíbula", "descripcion": "Músculo con dos vientres (rostral y caudal)", "inervacion": "Nervio mandibular (vientre rostral) y nervio facial (vientre caudal)", "funcion": "Depresor de la mandíbula (abre la boca)" },
-    { "nombre": "Miloideo", "region": "Cabeza", "ubicacion": "Cara medial de la mandíbula, forma el piso de la boca", "descripcion": "Músculo plano y delgado", "inervacion": "Nervio mandibular", "funcion": "Eleva el piso de la boca y la lengua" },
-    { "nombre": "Geniohioideo", "region": "Cabeza", "ubicacion": "Desde la sínfisis mandibular hasta el hueso hioides", "descripcion": "Músculo largo y delgado", "inervacion": "Nervio hipogloso", "funcion": "Protrusión de la lengua y estabilización del hioides" },
-    { "nombre": "Esternohioideo", "region": "Cuello", "ubicacion": "Ventral en el cuello, desde el esternón hasta el hioides", "descripcion": "Músculo largo y delgado", "inervacion": "Asa cervical (nervio hipogloso)", "funcion": "Retrae el hioides y la lengua" },
-    { "nombre": "Esternotiroideo", "region": "Cuello", "ubicacion": "Profundo al esternohioideo, desde el esternón hasta el cartílago tiroides", "descripcion": "Músculo aplanado", "inervacion": "Asa cervical", "funcion": "Depresor de la laringe" },
-    { "nombre": "Tirohioideo", "region": "Cuello", "ubicacion": "Desde el cartílago tiroides hasta el hioides", "descripcion": "Músculo pequeño", "inervacion": "Nervio hipogloso", "funcion": "Eleva la laringe" },
-    { "nombre": "Omohioideo", "region": "Cuello", "ubicacion": "Desde la escápula hasta el hioides, pasa lateral a la tráquea", "descripcion": "Músculo delgado con dos vientres", "inervacion": "Asa cervical", "funcion": "Retrae el hioides" },
-    { "nombre": "Braquiocefálico", "region": "Cuello", "ubicacion": "Desde la cabeza hasta el brazo, lateral en el cuello", "descripcion": "Músculo largo que forma el borde yugular", "inervacion": "Nervio accesorio y ramas cervicales", "funcion": "Flexor lateral del cuello y extensor del hombro" },
-    { "nombre": "Esternocefálico", "region": "Cuello", "ubicacion": "Ventral desde el esternón hasta la apófisis mastoides", "descripcion": "Músculo par, superficial", "inervacion": "Ramas ventrales de nervios cervicales", "funcion": "Flexor ventral del cuello" },
-    { "nombre": "Esternomastoideo", "region": "Cuello", "ubicacion": "Parte del esternocefálico que va al mastoides", "descripcion": "Frecuentemente fusionado con el esternocefálico", "inervacion": "Nervio accesorio", "funcion": "Rotación y flexión lateral del cuello" },
-    { "nombre": "Romboides", "region": "Tronco", "ubicacion": "Desde la línea media del dorso hasta el borde medial de la escápula", "descripcion": "Músculo plano, profundo al trapecio", "inervacion": "Nervios torácicos dorsales", "funcion": "Eleva y fija la escápula al tronco" },
-    { "nombre": "Trapecio", "region": "Tronco", "ubicacion": "Desde la línea media dorsal hasta la espina de la escápula", "descripcion": "Músculo triangular y superficial", "inervacion": "Nervio accesorio", "funcion": "Eleva y abduce la escápula" },
-    { "nombre": "Dorsal ancho", "region": "Tronco", "ubicacion": "Desde la fascia toracolumbar hasta el húmero", "descripcion": "Músculo ancho y plano, caudal a la escápula", "inervacion": "Nervio toracodorsal", "funcion": "Aductor y extensor del hombro" },
-    { "nombre": "Serrato ventral", "region": "Tronco", "ubicacion": "Desde las costillas medias hasta la cara medial de la escápula", "descripcion": "Músculo en forma de sierra", "inervacion": "Nervio torácico largo", "funcion": "Fijador y suspensor del tronco entre las extremidades" },
-    { "nombre": "Pectoral superficial", "region": "Tronco", "ubicacion": "Desde el esternón craneal hasta la cresta del húmero", "descripcion": "Músculo superficial, ancho", "inervacion": "Nervio pectoral craneal", "funcion": "Aductor del miembro torácico" },
-    { "nombre": "Pectoral profundo", "region": "Tronco", "ubicacion": "Desde el esternón caudal hasta la cara medial del húmero", "descripcion": "Músculo potente, caudal al superficial", "inervacion": "Nervio pectoral caudal", "funcion": "Aductor y retractor del miembro torácico" },
-    { "nombre": "Recto abdominal", "region": "Abdomen", "ubicacion": "Línea media ventral, desde el esternón hasta la pelvis", "descripcion": "Músculo largo, con intersecciones tendinosas", "inervacion": "Nervios espinales toracolumbares ventrales", "funcion": "Flexor del tronco y compresor abdominal" },
-    { "nombre": "Oblicuo externo del abdomen", "region": "Abdomen", "ubicacion": "Cara lateral del abdomen, superficial", "descripcion": "Músculo ancho con fibras caudoventrales", "inervacion": "Nervios toracolumbares ventrales", "funcion": "Compresor abdominal y flexor del tronco" },
-    { "nombre": "Oblicuo interno del abdomen", "region": "Abdomen", "ubicacion": "Capa media de la pared abdominal, profundo al oblicuo externo", "descripcion": "Fibras cranioventrales", "inervacion": "Nervios toracolumbares ventrales", "funcion": "Compresor abdominal y flexor del tronco" },
-    { "nombre": "Transverso del abdomen", "region": "Abdomen", "ubicacion": "Capa más profunda de la pared abdominal", "descripcion": "Fibras transversales", "inervacion": "Nervios toracolumbares ventrales", "funcion": "Compresor abdominal" },
-    { "nombre": "Diafragma", "region": "Tórax/Abdomen", "ubicacion": "Separa la cavidad torácica de la abdominal", "descripcion": "Músculo en forma de cúpula con sus porciones costal, esternal y lumbar", "inervacion": "Nervio frénico (C5-C7)", "funcion": "Principal músculo de la inspiración" },
-    { "nombre": "Intercostales externos", "region": "Tórax", "ubicacion": "Entre las costillas, desde el tubérculo hasta la unión costocondral", "descripcion": "Fibras orientadas caudoventralmente", "inervacion": "Nervios intercostales", "funcion": "Elevan las costillas (inspiración)" },
-    { "nombre": "Intercostales internos", "region": "Tórax", "ubicacion": "Profundos a los externos, entre las costillas", "descripcion": "Fibras orientadas craneoventralmente", "inervacion": "Nervios intercostales", "funcion": "Deprimen las costillas (espiración forzada)" },
-    { "nombre": "Escaleno", "region": "Cuello/Tórax", "ubicacion": "Desde las vértebras cervicales hasta la primera costilla", "descripcion": "Músculo en forma de abanico", "inervacion": "Ramos ventrales cervicales", "funcion": "Inspirador accesorio y flexor lateral del cuello" },
-    { "nombre": "Serrato dorsal craneal", "region": "Tórax", "ubicacion": "Desde la fascia toracolumbar hasta las costillas craneales", "descripcion": "Músculo delgado, superficial", "inervacion": "Nervios intercostales", "funcion": "Inspirador (eleva las costillas)" },
-    { "nombre": "Serrato dorsal caudal", "region": "Abdomen", "ubicacion": "Desde la fascia toracolumbar hasta las costillas caudales", "descripcion": "Músculo delgado", "inervacion": "Nervios intercostales", "funcion": "Espirador (deprime las costillas)" },
-    { "nombre": "Longísimo del dorso", "region": "Dorso", "ubicacion": "Desde el sacro hasta la cabeza, a lo largo de las vértebras", "descripcion": "Músculo epiaxial potente, dividido en varias porciones", "inervacion": "Ramos dorsales de los nervios espinales", "funcion": "Extensor y estabilizador de la columna" },
-    { "nombre": "Iliocostal", "region": "Dorso", "ubicacion": "Lateral al longísimo, desde el ilion hasta las costillas", "descripcion": "Porción lateral del sistema epiaxial", "inervacion": "Ramos dorsales", "funcion": "Extensor de la columna y depresor de las costillas (espiración)" },
-    { "nombre": "Semiespinoso de la cabeza", "region": "Dorso/Cabeza", "ubicacion": "Desde las vértebras torácicas hasta el hueso occipital", "descripcion": "Músculo profundo, parte del sistema transversoespinoso", "inervacion": "Ramos dorsales de los nervios cervicales", "funcion": "Extensor y rotador de la cabeza" },
-    { "nombre": "Multífido", "region": "Dorso", "ubicacion": "Entre las apófisis transversas y espinosas de las vértebras", "descripcion": "Músculos cortos y profundos", "inervacion": "Ramos dorsales", "funcion": "Rotación y extensión segmentaria de la columna" },
-    { "nombre": "Cuadrado lumbar", "region": "Abdomen", "ubicacion": "Ventral a las apófisis transversas de las vértebras lumbares", "descripcion": "Músculo grueso, desde el ilion hasta la última costilla", "inervacion": "Nervios lumbares ventrales", "funcion": "Flexor lateral del tronco y fijador de la columna" },
-    { "nombre": "Psoas mayor", "region": "Abdomen", "ubicacion": "Desde las vértebras lumbares hasta el trocánter menor del fémur", "descripcion": "Músculo largo y fusiforme", "inervacion": "Nervios lumbares ventrales", "funcion": "Flexor de la cadera" },
-    { "nombre": "Ilíaco", "region": "Abdomen", "ubicacion": "Desde el ilion hasta el fémur, junto al psoas", "descripcion": "Músculo triangular", "inervacion": "Nervio femoral", "funcion": "Flexor de la cadera" },
-    { "nombre": "Cocígeo", "region": "Pelvis", "ubicacion": "Desde la espina ciática hasta las vértebras caudales", "descripcion": "Músculo pequeño, profundo", "inervacion": "Ramos ventrales sacrococcígeos", "funcion": "Elevador de la cola" },
-    { "nombre": "Elevador de la cola", "region": "Pelvis", "ubicacion": "Desde el sacro hasta las vértebras caudales", "descripcion": "Músculo par, superficial en la base de la cola", "inervacion": "Nervios coccígeos", "funcion": "Eleva la cola" },
-    { "nombre": "Depresor de la cola", "region": "Pelvis", "ubicacion": "Ventral al sacro y primeras caudales", "descripcion": "Músculo largo y delgado", "inervacion": "Nervios coccígeos", "funcion": "Deprime la cola" },
-    { "nombre": "Orbicular de los párpados", "region": "Cabeza", "ubicacion": "Alrededor de la órbita, en los párpados", "descripcion": "Músculo esfinteriano delgado", "inervacion": "Nervio facial", "funcion": "Cierre de los párpados (parpadeo)" },
-    { "nombre": "Orbicular de la boca", "region": "Cabeza", "ubicacion": "Alrededor de la comisura labial", "descripcion": "Músculo esfinteriano complejo", "inervacion": "Nervio facial", "funcion": "Cierre de la boca y protrusión de los labios" },
-    { "nombre": "Cigomático", "region": "Cabeza", "ubicacion": "Desde el arco cigomático hasta la comisura labial", "descripcion": "Músculo delgado, superficial", "inervacion": "Nervio facial", "funcion": "Retrae la comisura labial (sonrisa)" },
-    { "nombre": "Elevador del labio superior", "region": "Cabeza", "ubicacion": "Desde el hueso maxilar hasta el labio superior", "descripcion": "Músculo pequeño", "inervacion": "Nervio facial", "funcion": "Eleva el labio superior" },
-    { "nombre": "Canino", "region": "Cabeza", "ubicacion": "Desde la fosa canina hasta la comisura labial", "descripcion": "Músculo profundo al cigomático", "inervacion": "Nervio facial", "funcion": "Eleva la comisura labial" },
-    { "nombre": "Depresor del labio inferior", "region": "Cabeza", "ubicacion": "Desde la mandíbula hasta el labio inferior", "descripcion": "Músculo delgado", "inervacion": "Nervio facial", "funcion": "Deprime el labio inferior" },
-    { "nombre": "Mentoniano", "region": "Cabeza", "ubicacion": "En la barba, desde la mandíbula hasta la piel del mentón", "descripcion": "Músculo pequeño", "inervacion": "Nervio facial", "funcion": "Eleva la piel del mentón" },
-    { "nombre": "Cutáneo del tronco", "region": "Tronco", "ubicacion": "Capa subcutánea del dorso y flancos", "descripcion": "Músculo delgado y extenso", "inervacion": "Ramas cutáneas de nervios torácicos", "funcion": "Mover la piel (reflejo de contracción cutánea)" },
-    { "nombre": "Cutáneo del hombro", "region": "Miembro torácico", "ubicacion": "Cubre la región del hombro, superficial", "descripcion": "Músculo delgado, continuo con el cutáneo del tronco", "inervacion": "Nervios cutáneos", "funcion": "Sacudir la piel del hombro" },
-    { "nombre": "Cutáneo femoral", "region": "Miembro pélvico", "ubicacion": "Cara lateral del muslo, superficial", "descripcion": "Músculo aplanado", "inervacion": "Ramas del plexo lumbar", "funcion": "Mover la piel del muslo" },
-    { "nombre": "Lumbricales (mano)", "region": "Miembro torácico", "ubicacion": "Palma de la mano, entre los tendones del flexor profundo", "descripcion": "Pequeños músculos intrínsecos", "inervacion": "Nervio mediano y cubital", "funcion": "Flexión metacarpofalángica y extensión interfalángica" },
-    { "nombre": "Interóseos (mano)", "region": "Miembro torácico", "ubicacion": "Entre los metacarpianos", "descripcion": "Músculos pequeños (palmares y dorsales)", "inervacion": "Nervio cubital", "funcion": "Aducción y abducción de los dedos" }
+    {"nombre": "orbicular de la boca", "region": "cabeza", "ubicacion": "facial", "inervacion": "nervio facial", "funcion": "no funcion"},
+    {"nombre": "bocinador", "region": "cabeza", "ubicacion": "facial", "inervacion": "nervio facial", "funcion": "colabora en masticar"},
+    {"nombre": "elevador nasolabial", "region": "cabeza", "ubicacion": "facial", "inervacion": "nervio facial", "funcion": "no funcion"},
+    {"nombre": "elevador del labio superior", "region": "cabeza", "ubicacion": "facial", "inervacion": "nervio facial", "funcion": "eleva el labio superior"},
+    {"nombre": "canino", "region": "cabeza", "ubicacion": "facial", "inervacion": "nervio facial", "funcion": "eleva el labio superior"},
+    {"nombre": "cigomatico", "region": "cabeza", "ubicacion": "facial", "inervacion": "nervio facial", "funcion": "mueve rostralmente el cartilago"},
+    {"nombre": "orbicular del ojo", "region": "cabeza", "ubicacion": "parpados", "inervacion": "nervio palpebral", "funcion": "contrae y cierra el ojo"},
+    {"nombre": "retractor del angulo lateral del ojo", "region": "cabeza", "ubicacion": "parpados", "inervacion": "nervio palpebral", "funcion": "retrae el angulo lateral del ojo"},
+    {"nombre": "elevador medial del ojo", "region": "cabeza", "ubicacion": "parpados", "inervacion": "nervio frontal", "funcion": "actua desde el angulo medial del ojo"},
+    {"nombre": "elevador del parpado superior", "region": "cabeza", "ubicacion": "parpados", "inervacion": "nervio oculomotor", "funcion": "eleva el parpado superior"},
+    {"nombre": "frontal", "region": "cabeza", "ubicacion": "parpados", "inervacion": "nervio frontal", "funcion": "eleva el parpado superior"},
+    {"nombre": "temporal", "region": "cabeza", "ubicacion": "masticadores", "inervacion": "nervio mandibular", "funcion": "eleva la mandibula"},
+    {"nombre": "maasetero", "region": "cabeza", "ubicacion": "masticadores", "inervacion": "nervio mandibular", "funcion": "eleva la mandibula"},
+    {"nombre": "pterigoides", "region": "cabeza", "ubicacion": "masticadores", "inervacion": "nervio mandibular", "funcion": "eleva la mandibula"},
+    {"nombre": "digastrico", "region": "cabeza", "ubicacion": "masticadores", "inervacion": "nervio facial", "funcion": "abre la boca"},
+    {"nombre": "retractor del globo ocular", "region": "cabeza", "ubicacion": "extrinsecos globo ocular", "inervacion": "nervio abducente", "funcion": "retrae el globo ocular"},
+    {"nombre": "recto (dorsal, ventral, lateral medial)", "region": "cabeza", "ubicacion": "extrinsecos globo ocular", "inervacion": "nervio abducente", "funcion": "giro del ojo"},
+    {"nombre": "orbicular dorsal", "region": "cabeza", "ubicacion": "extrinsecos globo ocular", "inervacion": "nervio oculomotor", "funcion": "giro del ojo"},
+    {"nombre": "orbicular ventral", "region": "cabeza", "ubicacion": "extrinsecos globo ocular", "inervacion": "nervio facial", "funcion": "giro del ojo"},
+    {"nombre": "trapecio cervical", "region": "Miembro torácico", "ubicacion": "torax", "inervacion": "nervio accesorio", "funcion": "eleva el hombro cranealmente"},
+    {"nombre": "trapecio toracico", "region": "Miembro torácico", "ubicacion": "torax", "inervacion": "nervio accesorio", "funcion": "eleva el hombro caudalmente"},
+    {"nombre": "cleidocefalico", "region": "Miembro torácico", "ubicacion": "torax", "inervacion": "ramas ventrales de los nervios cervicales y nervio braquial", "funcion": "desplaza cabeza y cuello"},
+    {"nombre": "braquiocefalo", "region": "Miembro torácico", "ubicacion": "torax", "inervacion": "nervio braquiocefalico", "funcion": "no funcion"},
+    {"nombre": "cleidobraquial", "region": "Miembro torácico", "ubicacion": "torax", "inervacion": "nervio braquiocefalico", "funcion": "extensor del hombro y brazo"},
+    {"nombre": "omotransverso", "region": "Miembro torácico", "ubicacion": "torax", "inervacion": "nervio accesorio", "funcion": "adelanta el hombro"},
+    {"nombre": "dorsal ancho", "region": "Miembro torácico", "ubicacion": "torax", "inervacion": "nervio toracodorsal", "funcion": "desplaza el miembro y flexiona el hombro"},
+    {"nombre": "PS pectorales descendente", "region": "Miembro torácico", "ubicacion": "torax", "inervacion": "nervios pectorales craneales", "funcion": "permite la locomocion"},
+    {"nombre": "PS pectoral transverso", "region": "Miembro torácico", "ubicacion": "torax", "inervacion": "nervios pectorales craneales", "funcion": "aduce el miembro"},
+    {"nombre": "pectoral profundo", "region": "Miembro torácico", "ubicacion": "torax", "inervacion": "nervios pectorales caudales", "funcion": "permite la locomocion"},
+    {"nombre": "Romboides", "region": "Miembro torácico", "ubicacion": "torax", "inervacion": "ramas ventrales de los nervios cervicales y toracicos", "funcion": "eleva y retrae el miembro"},
+    {"nombre": "romboide cervical", "region": "Miembro torácico", "ubicacion": "torax", "inervacion": "ramas ventrales de los nervios cervicales y toracicos", "funcion": "eleva el cuello cuando esta fijo"},
+    {"nombre": "romboide toracico", "region": "Miembro torácico", "ubicacion": "torax", "inervacion": "ramas ventrales de los nervios cervicales y toracicos", "funcion": "eleva y retrae el miembro"},
+    {"nombre": "serrato ventral toracico", "region": "Miembro torácico", "ubicacion": "torax", "inervacion": "nervio toracico largo", "funcion": "suspensor del tronco"},
+    {"nombre": "serrato ventral cervical", "region": "Miembro torácico", "ubicacion": "torax", "inervacion": "ramas ventrales de los nervios cervicales", "funcion": "no funcion"},
+    {"nombre": "supraespinoso", "region": "Miembro torácico intrinsecos", "ubicacion": "hombro lateral", "inervacion": "nervio subescapular", "funcion": "extensor del hombro y brazo"},
+    {"nombre": "infraespinoso", "region": "Miembro torácico intrinsecos", "ubicacion": "hombro lateral", "inervacion": "nervio subescapular", "funcion": "flexor y extensor del hombro, abductor del brazo"},
+    {"nombre": "deltoides", "region": "Miembro torácico intrinsecos", "ubicacion": "hombro lateral", "inervacion": "nervio axial", "funcion": "flexor art."},
+    {"nombre": "redondo menor", "region": "Miembro torácico intrinsecos", "ubicacion": "hombro lateral", "inervacion": "nervio axial", "funcion": "flexor hombro"},
+    {"nombre": "subescapular", "region": "Miembro torácico intrinsecos", "ubicacion": "hombro medial", "inervacion": "nervio subescapular", "funcion": "aductor del brazo, flexor y extensor del hombro"},
+    {"nombre": "coracobraquial", "region": "Miembro torácico intrinsecos", "ubicacion": "hombro medial", "inervacion": "nervio musculo cutaneo", "funcion": "aductor del brazo, flexor y extensor del hombro"},
+    {"nombre": "redondo mayor", "region": "Miembro torácico intrinsecos", "ubicacion": "hombro medial", "inervacion": "nervio axial", "funcion": "aductor del brazo, flexor y extensor del hombro"},
+    {"nombre": "braquial", "region": "miembro toracico", "ubicacion": "art codo craneal", "inervacion": "nervio musculocutaneo", "funcion": "flexor de la art codo"},
+    {"nombre": "biceps braquial", "region": "miembro toracico", "ubicacion": "art codo craneal", "inervacion": "nervio musculocutaneo", "funcion": "flexor hombro y fija el mismo."},
+    {"nombre": "triceps braquial", "region": "miembro toracico", "ubicacion": "art codo caudal", "inervacion": "nervio radial", "funcion": "extiende y fija el codo"},
+    {"nombre": "anconeo", "region": "miembro toracico", "ubicacion": "art codo caudal", "inervacion": "nervio radial", "funcion": "extiende el codo"},
+    {"nombre": "tensor de la fascia del antebrazo", "region": "miembro toracico", "ubicacion": "art codo caudal", "inervacion": "nervio radial", "funcion": "extiende el codo y tensa la fascia del antebrazo"},
+    {"nombre": "braquiradial", "region": "miembro toracico", "ubicacion": "supinadores", "inervacion": "nervio radial", "funcion": "rotador y extensor del radio"},
+    {"nombre": "supinador", "region": "miembro toracico", "ubicacion": "supinadores", "inervacion": "nervio radial", "funcion": "rotador y extensor del radio"},
+    {"nombre": "pronador redondo", "region": "miembro toracico", "ubicacion": "pronadores", "inervacion": "nervio medial", "funcion": "rotador interno del radio"},
+    {"nombre": "pronador cuadrado", "region": "miembro toracico", "ubicacion": "pronadores", "inervacion": "nervio medial", "funcion": "rotador interno del radio"},
+    {"nombre": "extensor carpo radial", "region": "carpos y dedos", "ubicacion": "carpos y dedos extensor vista lateral", "inervacion": "nervio radial", "funcion": "extiende y flexiona el codo"},
+    {"nombre": "extensor digital comun", "region": "carpos y dedos", "ubicacion": "carpos y dedos extensor vista lateral", "inervacion": "nervio radial", "funcion": "extiende el carpo t art de los cuatro dedos"},
+    {"nombre": "extensor digital lateral", "region": "carpos y dedos", "ubicacion": "carpos y dedos extensor vista lateral", "inervacion": "nervio radial", "funcion": "extiende carpo y art."},
+    {"nombre": "separador largo del dedo 1", "region": "carpos y dedos", "ubicacion": "carpos y dedos extensor vista lateral", "inervacion": "nervio radial", "funcion": "extiende y flexiona el carpo"},
+    {"nombre": "extensor de los dedos 1 y 2", "region": "carpos y dedos", "ubicacion": "carpos y dedos extensor vista lateral", "inervacion": "nervio radial", "funcion": "extensor y separador del dedo 1 y 2"},
+    {"nombre": "flexor carpo radial", "region": "carpos y dedos", "ubicacion": "carpos y dedos flexor vista medial", "inervacion": "Nervio mediano", "funcion": "flexiona el carpo"},
+    {"nombre": "flexor digital superficial", "region": "carpos y dedos", "ubicacion": "carpos y dedos flexor vista medial", "inervacion": "Nervio mediano", "funcion": "flexor del carpo y art de los dedos 2, 3,4,5"},
+    {"nombre": "flexor digital profundo", "region": "carpos y dedos", "ubicacion": "carpos y dedos flexor vista medial", "inervacion": "Nervio mediano y nervio ulnar", "funcion": "flexor carpo y de las art de los 5 dedos"},
+    {"nombre": "flexor carpoulnar", "region": "carpos y dedos", "ubicacion": "carpos y dedos flexor vista medial", "inervacion": "nervio ulnar", "funcion": "flexiona carpo y ayuda en art."},
+    {"nombre": "serrato dorsal craneal", "region": "toracicos inspoiradores", "ubicacion": "tronco", "inervacion": "ramas de los nervios intercostales", "funcion": "mueven las costillas cranealmente"},
+    {"nombre": "intercostales externos", "region": "toracicos inspoiradores", "ubicacion": "tronco", "inervacion": "ramas de los nervios intercostales", "funcion": "mueven las costillas cranealmente"},
+    {"nombre": "elevadores de las costillas", "region": "toracicos inspoiradores", "ubicacion": "tronco", "inervacion": "ramas de los nervios intercostales", "funcion": "mueven las costillas cranealmente"},
+    {"nombre": "recto del torax", "region": "toracicos inspoiradores", "ubicacion": "tronco", "inervacion": "primeros nervios intercostales", "funcion": "colabora en la inspiracion"},
+    {"nombre": "diafragma", "region": "toracicos inspoiradores", "ubicacion": "tronco", "inervacion": "nervios frenicos izquierdo y derecho", "funcion": "aumenta el volumen de la cavidad"},
+    {"nombre": "serrato dorsal caudal", "region": "toracicos espiradores", "ubicacion": "tronco", "inervacion": "ramas  de losultimos nervops intercostales", "funcion": "mueve las costillas caudalmente"},
+    {"nombre": "subcostales", "region": "toracicos espiradores", "ubicacion": "tronco", "inervacion": "ultimos nervios intercostales", "funcion": "colabora en la espiracion"},
+    {"nombre": "retractores de las costillas", "region": "toracicos espiradores", "ubicacion": "tronco", "inervacion": "ultimos nervios intercostales", "funcion": "colabora en la espiracion"},
+    {"nombre": "transverso del torax", "region": "toracicos espiradores", "ubicacion": "tronco", "inervacion": "nervios intercostales", "funcion": "colabora en la espiracion"},
+    {"nombre": "Intercostales internos", "region": "toracicos espiradores", "ubicacion": "tronco", "inervacion": "ramas de los nervios intercostales", "funcion": "actuan durante la espiracion"},
+    {"nombre": "oblicuo externo del abdomen", "region": "mmiembro toracico", "ubicacion": "musculos abdomen", "inervacion": "ultimos nervios intercostales, costoabdominal, iliohipogastrico craneal y caudal, ilionguinal", "funcion": "soporta el peso del abdomen, ayuda en el parto, ayuda adefecar y participa en la locomocion"},
+    {"nombre": "oblicuo interno del abdomen", "region": "mmiembro toracico", "ubicacion": "musculos abdomen", "inervacion": "ultimos nervios intercostales, costoabdominal, iliohipogastrico craneal y caudal, ilionguinal", "funcion": "soporta el peso del abdomen, ayuda en el parto, ayuda adefecar y participa en la locomocion"},
+    {"nombre": "transverso del abdomen", "region": "mmiembro toracico", "ubicacion": "musculos abdomen", "inervacion": "ultimos nervios intercostales, costoabdominal, iliohipogastrico craneal y caudal, ilionguinal", "funcion": "soporta el peso del abdomen, ayuda en el parto, ayuda adefecar y participa en la locomocion"},
+    {"nombre": "recto del abdomen", "region": "mmiembro toracico", "ubicacion": "musculos abdomen", "inervacion": "ultimos nervios intercostales, costoabdominal, iliohipogastrico craneal y caudal, ilionguinal", "funcion": "soporta el peso del abdomen, ayuda en el parto, ayuda adefecar y participa en la locomocion"},
+    {"nombre": "psoas menos", "region": "miembro pelviano", "ubicacion": "cintura pelviana extrinsecos", "inervacion": "ramas ventrales de los nervios lumbares", "funcion": "dirige cranealmente la pelvis"},
+    {"nombre": "iliopsoas", "region": "miembro pelviano", "ubicacion": "cintura pelviana extrinsecos", "inervacion": "ramas ventrales de los nervios lumbares", "funcion": "flexiona la cadera cranealmente"},
+    {"nombre": "cuadrado lumbar", "region": "miembro pelviano", "ubicacion": "cintura pelviana extrinsecos", "inervacion": "ramas ventrales de los nervios lumbares", "funcion": "arquea la espalda"},
+    {"nombre": "glueto superficial", "region": "miembro pelviano", "ubicacion": "art cadera intrinsecos", "inervacion": "nervio gluteo caudal", "funcion": "extiene la cadera pelviana"},
+    {"nombre": "gluteo medio", "region": "miembro pelviano", "ubicacion": "art cadera intrinsecos", "inervacion": "nervio gluteo caudal", "funcion": "extiene la cadera caudalmente"},
+    {"nombre": "piriforme", "region": "miembro pelviano", "ubicacion": "art cadera intrinsecos", "inervacion": "nervio gluteo caudal", "funcion": "extiende la cadera y aduce el muslo"},
+    {"nombre": "gluteo profundo", "region": "miembro pelviano", "ubicacion": "art cadera intrinsecos", "inervacion": "nervio gluteo craneal", "funcion": "extiende la cadera y abductor"},
+    {"nombre": "tensor de la fascia lata", "region": "miembro pelviano", "ubicacion": "art cadera intrinsecos", "inervacion": "nervio gluteo craneal", "funcion": "flexiona la cadera y extiende la rodilla"},
+    {"nombre": "biceps femoral", "region": "miembro pelviano", "ubicacion": "caudales del muslo", "inervacion": "nervio gluteo craneal", "funcion": "extensor del miembro y aductordel miembro  pelviano."},
+    {"nombre": "semitendinoso", "region": "miembro pelviano", "ubicacion": "caudales del muslo", "inervacion": "nervio ciatico", "funcion": "extensor"},
+    {"nombre": "semimenbranoso", "region": "miembro pelviano", "ubicacion": "caudales del muslo", "inervacion": "nervio ciatico", "funcion": "extensor"},
+    {"nombre": "sartrorio craneal", "region": "miembro pelviano", "ubicacion": "mediales del muslo", "inervacion": "nervio femoral y ramas musculares del nervio safeno", "funcion": "flexiona y aduce"},
+    {"nombre": "sartrorio caudal", "region": "miembro pelviano", "ubicacion": "mediales del muslo", "inervacion": "nervio obturador", "funcion": "flexiona y aduce"},
+    {"nombre": "gracilis", "region": "miembro pelviano", "ubicacion": "mediales del muslo", "inervacion": "nervio obturador", "funcion": "no funcion"},
+    {"nombre": "pectineo", "region": "miembro pelviano", "ubicacion": "mediales del muslo", "inervacion": "nervio obturador", "funcion": "no funcion"},
+    {"nombre": "aductor", "region": "miembro pelviano", "ubicacion": "mediales del muslo", "inervacion": "nervio obturador", "funcion": "no funcion"},
+    {"nombre": "obturador interno", "region": "miembro pelviano", "ubicacion": "profundos de la cadera", "inervacion": "nervio ciatico", "funcion": "rota femur y extiende la cadera"},
+    {"nombre": "gemelos", "region": "miembro pelviano", "ubicacion": "profundos de la cadera", "inervacion": "nervio ciatico", "funcion": "rota femur y extiende la cadera"},
+    {"nombre": "obturador externo", "region": "miembro pelviano", "ubicacion": "profundos de la cadera", "inervacion": "nervio obturador", "funcion": "rota el miembro"},
+    {"nombre": "cuadrado femoral", "region": "miembro pelviano", "ubicacion": "profundos de la cadera", "inervacion": "nervio ciatico", "funcion": "rota femur y extiende cadera"},
+    {"nombre": "cuadriceps femoral", "region": "miembro pelviano", "ubicacion": "art rodilla", "inervacion": "nervio femoral", "funcion": "extensor y flexor de la rodilla"},
+    {"nombre": "popliteo", "region": "miembro pelviano", "ubicacion": "art rodilla", "inervacion": "nervio tibial", "funcion": "flexor rodilla"},
+    {"nombre": "tibial craneal", "region": "miembro pelviano", "ubicacion": "tarso y dedos", "inervacion": "nervio fibular profundo", "funcion": "flexor tarso, bota el pie ahacia afuera"},
+    {"nombre": "extensor digital largo", "region": "miembro pelviano", "ubicacion": "tarso y dedos", "inervacion": "nervio fibular profundo", "funcion": "flexor tarso, extien art de los 4 dedos"},
+    {"nombre": "fibular largo", "region": "miembro pelviano", "ubicacion": "tarso y dedos", "inervacion": "nervio fibular superficial", "funcion": "flexiona tarso, bots internamente el pie"},
+    {"nombre": "extensor digital lateral", "region": "miembro pelviano", "ubicacion": "tarso y dedos", "inervacion": "nervio fibular superficial", "funcion": "extiende y separa el dedo 5"},
+    {"nombre": "fibular corto", "region": "miembro pelviano", "ubicacion": "tarso y dedos", "inervacion": "nervio fibular superficial", "funcion": "flexiona el tarso"},
+    {"nombre": "gastronemio lateral medial", "region": "miembro pelviano", "ubicacion": "tarso y dedos", "inervacion": "nervio tibial", "funcion": "extiende tarsos"},
+    {"nombre": "flexor digital superficial", "region": "miembro pelviano", "ubicacion": "tarso y dedos", "inervacion": "nervio tibial", "funcion": "extiende tarsos, flexiona dedos"},
+    {"nombre": "flexor digital profundo", "region": "miembro pelviano", "ubicacion": "tarso y dedos", "inervacion": "nervio tibial", "funcion": "extiende tarsos, flexiona dedos"},
+    {"nombre": "tibial caudal", "region": "miembro pelviano", "ubicacion": "tarso y dedos", "inervacion": "nervio tibial", "funcion": "extiende el tarso"},
 ];
 
 // ============================================================
@@ -191,7 +199,7 @@ function iniciarSesion() {
   sesion = musculos.filter(m => {
     const e = progreso[m.nombre];
     return !e || e.proximaVez <= ahora;
-  }).sort(() => Math.random() - 0.5);
+});
 
   if (sesion.length === 0) {
     alert("🎉 ¡No hay músculos pendientes por hoy! Vuelve mañana.");
@@ -243,7 +251,7 @@ function mostrarPregunta() {
   // Ayudas
   document.getElementById("region-ayuda").textContent = musculoActual.region;
   document.getElementById("ubicacion-ayuda").textContent = musculoActual.ubicacion;
-  document.getElementById("descripcion-ayuda").textContent = musculoActual.descripcion;
+  //document.getElementById("descripcion-ayuda").textContent = musculoActual.descripcion;
 
   // Limpiar
   ["input-nombre", "input-inervacion", "input-funcion"].forEach(id => {
@@ -259,19 +267,35 @@ function mostrarPregunta() {
 // PISTA PROGRESIVA
 // ============================================================
 function mostrarPista() {
+  if (nivelPistaActual > 4) return;
+
   const nombre = musculoActual.nombre;
-  const palabras = nombre.split(" ");
+  const inervacion = musculoActual.inervacion;
+  const funcion = musculoActual.funcion;
   const nivel = nivelPistaActual;
+
+  const iniciales = (texto) => texto
+    .split(" ")
+    .map(p => p.charAt(0).toLowerCase())
+    .join(" ");
+
   let pista = "";
 
   if (nivel === 1) {
-    pista = `📏 El nombre tiene ${nombre.length} caracteres.`;
+    pista = `
+      🔤 Nombre: <strong>${iniciales(nombre)}</strong><br>
+      🪢 Inervación: <strong>${iniciales(inervacion)}</strong><br>
+      ⚡ Función: <strong>${iniciales(funcion)}</strong>
+    `;
+
   } else if (nivel === 2) {
-    pista = `🔤 Primera letra: "${nombre.charAt(0).toUpperCase()}". ⚡ Función: ${musculoActual.funcion}.`;
+    const palabras = nombre.split(" ");
+    pista = `📏 Tiene ${palabras.length} palabra(s) y ${nombre.length} caracteres en total.`;
+
   } else if (nivel === 3) {
-    pista = palabras.length >= 2
-      ? `📖 Primera palabra: "${palabras[0]}". 🪢 Inervación: ${musculoActual.inervacion}.`
-      : `📖 Primeras letras: "${nombre.substring(0, Math.floor(nombre.length / 2))}..."`;
+    const primera = nombre.split(" ")[0];
+    pista = `📖 Primera palabra: <strong>${primera}</strong>`;
+
   } else {
     pista = `💡 El músculo es: <strong>${nombre}</strong>`;
   }
@@ -279,7 +303,16 @@ function mostrarPista() {
   document.getElementById("nivel-pista").textContent = nivel;
   document.getElementById("texto-pista").innerHTML = pista;
   document.getElementById("panel-pista").style.display = "block";
+
   nivelPistaActual++;
+
+  if (nivelPistaActual > 4) {
+    const btn = document.getElementById("btn-pista");
+    btn.textContent = "🔒 Sin más pistas";
+    btn.disabled = true;
+    btn.style.opacity = "0.5";
+    btn.style.cursor = "not-allowed";
+  }
 }
 
 // ============================================================
